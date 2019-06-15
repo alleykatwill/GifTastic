@@ -24,5 +24,22 @@
     <button data-person="Darryl">Darryl Philbin</button>
     <button data-person="Meredith">Meredith Palmer</button>
     <button data-person="Creed">Creed Bratton</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $("button").on("click", function() {
+        var x = $(this).data("person");
+        var queryURL =
+          "http://api.giphy.com/v1/gifs/seach?q=" +
+          x +
+          " &api_key=YPwHtKDyEnvOHr4XtmaagMBMTr9Bl5YG";
+        $.ajax({ url: queryURL, mehod: GET }).done(function(response) {
+          for (var i = 0; i < response.data.length; i++) {
+            var personDiv = $("<div>");
+            var p = $("<p>").text("Rating: " + response.data[i].rating);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
