@@ -5,6 +5,8 @@
 //the 10 gifs will appear on the screen as a still image//
 //when clicked the gifs will animate//
 
+//array named dunder instead of topic
+
 $(document).ready(function() {
   var dunder = [
     "Micheal Scott",
@@ -23,6 +25,8 @@ $(document).ready(function() {
     "Kevin Malone",
     "Holly Flax"
   ];
+
+  // function to make buttons and then reset or clear results once another button is clicked
 
   function makeButtons() {
     $("#buttons").empty();
@@ -45,6 +49,9 @@ $(document).ready(function() {
     makeButtons();
     return false;
   });
+
+  // calls AJAX and connects to GIPHY API-Limits search results to 10 images--shows image rating when cursor is placed over it
+  // I had to use the class activites as a guidelines to complete the homework.
 
   $(document).on("click", "button", function() {
     $("#gifs").empty();
@@ -73,6 +80,8 @@ $(document).ready(function() {
       }
     });
   });
+
+  // Makes images still until clicked
 
   $(document).on("click", ".gif", function() {
     var state = $(this).attr("data-state");
