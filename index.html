@@ -1,45 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en-us">
   <head>
-    <meta charset="utf-8" />
-    <title>Dunder Mifflin Giphy</title>
+    <meta charset="UTF-8" />
+    <title>Dunder Mifflin</title>
+    <!-- Added a link to Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- favicon -->
+
+    <link
+      rel="shortcut icon"
+      href="assets/images/mifflin.jpg"
+      type="image/x-icon"
+    />
+    <!-- Added a link to Font Awesome CDN-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
   <body>
-    <!--Make Buttons For Office Characters-->
-    <button data-person="Michael">Micheal Scott</button>
-    <button data-person="Dwight">Dwight Schrute</button>
-    <button data-person="Jim">Jim Halpert</button>
-    <button data-person="Pam">Pam Halpert</button>
-    <button data-person="Ryan">Ryan Howard</button>
-    <button data-person="Kelly">Kelly Kapoor</button>
-    <button data-person="Kevin">Kevin Malone</button>
-    <button data-person="Oscar">Oscar Nunez</button>
-    <button data-person="Angela">Angela Martin</button>
-    <button data-person="Stanley">Stanley Hudson</button>
-    <button data-person="Phylllis">Phyllis Vance</button>
-    <button data-person="Andy">Andy Barnard</button>
-    <button data-person="Holly">Holly Flax</button>
-    <button data-person="Toby">Toby Flenderson</button>
-    <button data-person="Darryl">Darryl Philbin</button>
-    <button data-person="Meredith">Meredith Palmer</button>
-    <button data-person="Creed">Creed Bratton</button>
+    <div class="container">
+      <div class="title">
+        <img src="assets/images/office1.jpg" width="400" dunder />
+      </div>
+      <div class="headerTitle"><h1>Person's Paper People Company</h1> 
+        </span>
+      </div>
+    </div>
+    <div class="mainContent">
+      <div id="buttons"></div>
+      <br />
+      
+      <div id="gifs"></div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
-      $("button").on("click", function() {
-        var x = $(this).data("person");
-        var queryURL =
-          "http://api.giphy.com/v1/gifs/seach?q=" +
-          x +
-          " &api_key=YPwHtKDyEnvOHr4XtmaagMBMTr9Bl5YG";
-        $.ajax({ url: queryURL, mehod: GET }).done(function(response) {
-          for (var i = 0; i < response.data.length; i++) {
-            var personDiv = $("<div>");
-            var p = $("<p>").text("Rating: " + response.data[i].rating);
-          }
-        });
-      });
-    </script>
+    <script src="assets/js/gif.js"></script>
   </body>
 </html>

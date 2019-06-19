@@ -1,0 +1,18 @@
+body {
+  background-color: gray;
+  background-image: url("../images/dunder2.png");
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  opacity: 0.9;
+}
+
+.gif {
+  margin: 10px;
+}
+
+.dunder {
+  background-color: rgb(76, 76, 78);
+  font-size: 20px;
+}
